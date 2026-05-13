@@ -1,0 +1,18 @@
+{
+    "name": "Change my profile picture",
+    "description": "Extantion that changes my 42 profile picture to an image of my choice",
+    "version": "0.0.1",
+    "manifest_version": 3,
+    "action": {
+        "default_icon": "icon.jpg"
+    },
+    "content_scripts":
+    [
+        {
+        "js": ["script.js"],
+        "matches": [
+            "https://code.42.tech/*"
+        ]
+        }
+    ]
+}
