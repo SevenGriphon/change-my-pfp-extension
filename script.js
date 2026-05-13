@@ -15,8 +15,19 @@ function replace_src(elements, filter_src, new_src)
     }
 }
 
-const observer = new MutationObserver(
-    () => replace_src(document.querySelectorAll("img"), OLD_PFP, NEW_PFP)
-);
+function start_observer()
+{
+    const observer = new MutationObserver(
+        () => replace_src(document.querySelectorAll("img"), OLD_PFP, NEW_PFP)
+    );
 
-observer.observe(document, {childList : true, subtree : true});
+    observer.observe(document, {childList : true, subtree : true});
+}
+
+chrome.runtime.sendMessage("Hello!").then((message) => 
+    {
+        if (message == "ON")
+        {
+            start_observer();
+        }
+    });
