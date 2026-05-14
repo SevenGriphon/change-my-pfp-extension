@@ -24,7 +24,7 @@ function start_observer()
     observer.observe(document, {childList : true, subtree : true});
 }
 
-chrome.runtime.sendMessage("Hello!").then((message) => 
+chrome.runtime.sendMessage({type : "Get State"}).then((message) => 
     {
         if (message == "ON")
         {
