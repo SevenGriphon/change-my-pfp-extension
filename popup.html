@@ -1,12 +1,25 @@
 <html>
+    <head>
+        <link rel="stylesheet" href="popup.css">
+    </head>
     <body>
-        <p>2848972189479817284797124792141829471287498124897</p>
-        <input type="checkbox" id="state">
-        <label for="state" id="checkboxLabel"></label>
-        <br><label for="oldPfpUrl">Old profile picture URL:</label>
-        <input type="text" id="oldPfpUrl">
-        <br><label for="newPfpUrl">New profile picture URL:</label>
-        <input type="text" id="newPfpUrl">
+        <div id="mainContainer">
+            <div id="headerContainer">
+                <span id="header">Change my PFP</span>
+            </div>
+            <div id="stateContainer">
+                <input type="checkbox" id="state">
+                <label for="state" id="checkboxLabel" class="stateLabel"></label>
+            </div>
+            <div id="oldUrlContainer">
+                <label for="oldPfpUrl" class="textFieldLabel">Old profile picture URL:</label>
+                <input type="text" id="oldPfpUrl">
+            </div>
+            <div id="newUrlContainer">
+                <label for="newPfpUrl" class="textFieldLabel">New profile picture URL:</label>
+                <input type="text" id="newPfpUrl">
+            </div>
+        </div>
         <script src="popup.js"></script>
     </body>
 </html>

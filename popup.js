@@ -5,7 +5,7 @@ checkboxLabel = document.querySelector("#checkboxLabel");
 
 function set_checkbox_text(text)
 {
-    checkboxLabel.innerHTML = text;
+    checkboxLabel.innerHTML = `State (${text})`;
 }
 
 
