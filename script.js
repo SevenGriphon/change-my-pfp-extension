@@ -26,6 +26,7 @@ function start_observer()
 
 chrome.runtime.sendMessage({type : "Get State"}).then((message) => 
 {
+    console.log(`the extension is ${message}`);
     if (message == "ON")
     {
         chrome.runtime.sendMessage({type : "Get Urls"}).then((message) =>
