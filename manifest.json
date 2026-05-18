@@ -1,7 +1,7 @@
 {
     "name": "Change my profile picture 42",
     "description": "Extantion that allows user to change their 42 profile picture to an image of their choice",
-    "version": "0.0.2",
+    "version": "0.0.3",
     "manifest_version": 3,
     "browser_specific_settings": 
     {

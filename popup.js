@@ -8,39 +8,32 @@ function set_checkbox_text(text)
     checkboxLabel.innerHTML = `State (${text})`;
 }
 
-
-chrome.runtime.sendMessage({type : "Init"}).then(
-    (message) => {
-        set_checkbox_text(message.ext_status);
-        checkbox.checked = message.ext_status == "ON" ? true : false;
-        oldUrlField.value = message.old_url;
-        newUrlField.value = message.new_url;
+chrome.storage.local.get(["ext_status", "old_url", "new_url"]).then(
+    (result) =>
+    {
+        console.log(result);
+        set_checkbox_text(result.ext_status);
+        checkbox.checked = result.ext_status == "ON" ? true : false;
+        oldUrlField.value = result.old_url;
+        newUrlField.value = result.new_url;
     }
-);
+)
 
 checkbox.addEventListener("input", 
     () => {
-        chrome.runtime.sendMessage({
-            type : "Set State",
-            data : checkbox.checked
-        }).then(set_checkbox_text);
+        chrome.storage.local.set({ext_status : checkbox.checked ? "ON" : "OFF"})
+        set_checkbox_text(checkbox.checked ? "ON" : "OFF");
     }
 );
 
 oldUrlField.addEventListener("input",
     () => {
-        chrome.runtime.sendMessage({
-            type : "Set Old Url",
-            data : oldUrlField.value
-        });
+        chrome.storage.local.set({old_url : oldUrlField.value});
     }
 )
 
 newUrlField.addEventListener("input",
     () => {
-        chrome.runtime.sendMessage({
-            type : "Set New Url",
-            data : newUrlField.value
-        });
+        chrome.storage.local.set({new_url : newUrlField.value});
     }
 )
