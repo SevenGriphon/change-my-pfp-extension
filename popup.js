@@ -5,7 +5,7 @@ checkboxLabel = document.querySelector("#checkboxLabel");
 
 function set_checkbox_text(text)
 {
-    checkboxLabel.innerHTML = `State (${text})`;
+    checkboxLabel.textContent = `State (${text})`;
 }
 
 chrome.storage.local.get(["ext_status", "old_url", "new_url"]).then(
