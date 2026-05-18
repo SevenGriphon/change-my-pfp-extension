@@ -7,17 +7,23 @@
             <div id="headerContainer">
                 <span id="header">Change my PFP</span>
             </div>
+            <div style="width: 100%; margin-bottom: -10; margin-top: -10;">
+                <div class="separator"></div>
+            </div>
             <div id="stateContainer">
                 <input type="checkbox" id="state">
-                <label for="state" id="checkboxLabel" class="stateLabel"></label>
+                <label for="state" id="checkboxLabel" class="stateLabel noselect">State(<span id="stateText"></span>)</label>
             </div>
             <div id="oldUrlContainer">
-                <label for="oldPfpUrl" class="textFieldLabel">Old profile picture URL:</label>
+                <label for="oldPfpUrl" class="textFieldLabel noselect">Old profile picture URL:</label>
                 <input type="text" id="oldPfpUrl">
             </div>
             <div id="newUrlContainer">
-                <label for="newPfpUrl" class="textFieldLabel">New profile picture URL:</label>
+                <label for="newPfpUrl" class="textFieldLabel noselect">New profile picture URL:</label>
                 <input type="text" id="newPfpUrl">
+            </div>
+            <div style="width: 100%; margin-top: -10;">
+                <div class="separator"></div>
             </div>
         </div>
         <script src="popup.js"></script>

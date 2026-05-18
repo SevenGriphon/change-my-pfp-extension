@@ -1,11 +1,14 @@
 checkbox = document.querySelector("#state");
 oldUrlField = document.querySelector("#oldPfpUrl");
 newUrlField = document.querySelector("#newPfpUrl");
-checkboxLabel = document.querySelector("#checkboxLabel");
+checkboxLabel = document.querySelector("#stateText");
 
 function set_checkbox_text(text)
 {
-    checkboxLabel.textContent = `State (${text})`;
+    console.log(checkboxLabel);
+    checkboxLabel.textContent = text;
+    checkboxLabel.classList.remove(text == "ON" ? "off" : "on");
+    checkboxLabel.classList.add(text == "ON" ? "on" : "off");
 }
 
 chrome.storage.local.get(["ext_status", "old_url", "new_url"]).then(
