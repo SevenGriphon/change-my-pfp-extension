@@ -31,7 +31,10 @@ chrome.storage.local.get(["ext_status"]).then((result) =>
             {
                 old_pfp = result.old_url;
                 new_pfp = result.new_url;
+                if (old_pfp != "")
+                {
+                    start_observer();
+                }
             });
-        start_observer();
     }
 });
